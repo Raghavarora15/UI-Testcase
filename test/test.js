@@ -45,11 +45,11 @@ describe("Test Case for goodreads.com", function(){
 // Step: 5 - Search for a particular book after successful login
       await driver.wait(until.elementLocated(By.css("[placeholder='Search books']")), 5000);
       const searchInput = await driver.findElement(By.css("[placeholder='Search books']"));
-      await searchInput.sendKeys('Alchemist', Key.RETURN);
+      await searchInput.sendKeys('Stars', Key.RETURN);
 
 // Step: 6 - Select the book from the search results
-      await driver.wait(until.elementLocated(By.css("[alt='The Alchemist']")), 10000);
-      const bookSelect  = await driver.findElement(By.css("[alt='The Alchemist']")); 
+      await driver.wait(until.elementLocated(By.css("[alt='The Fault in Our Stars']")), 10000);
+      const bookSelect  = await driver.findElement(By.css("[alt='The Fault in Our Stars']")); 
         bookSelect.click();
 
 // Step: 7 - Add the book to the "WANT TO READ" section
@@ -68,8 +68,8 @@ describe("Test Case for goodreads.com", function(){
         mybooks.click();
 
 // Step: 9 - Remove the book from the shelf
-        await driver.wait(until.elementLocated(By.css('[data-confirm="Are you sure you want to remove The Alchemist from your books? This will permanently remove this book from your shelves, including any review, rating, tags, or notes you have added. To change the shelf this book appears on please edit the shelves."]')), 5000);
-        const remove  = await driver.findElement(By.css('[data-confirm="Are you sure you want to remove The Alchemist from your books? This will permanently remove this book from your shelves, including any review, rating, tags, or notes you have added. To change the shelf this book appears on please edit the shelves."]'));   //class target
+        await driver.wait(until.elementLocated(By.css('[data-confirm="Are you sure you want to remove The Fault in Our Stars from your books? This will permanently remove this book from your shelves, including any review, rating, tags, or notes you have added. To change the shelf this book appears on please edit the shelves."]')), 5000);
+        const remove  = await driver.findElement(By.css('[data-confirm="Are you sure you want to remove The Fault in Our Stars from your books? This will permanently remove this book from your shelves, including any review, rating, tags, or notes you have added. To change the shelf this book appears on please edit the shelves."]'));   //class target
         remove.click();
         
         await driver.sleep(1200); // Give sleep timer to get the alert properly
